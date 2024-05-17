@@ -3,43 +3,46 @@
 //  Starter code to control syringe pump
 
 import Foundation
-import ORSSerial
+import Socket //import bluesocket library
 
-class SyringePumpController: ObservableObject {
-    // MARK: - Serial Port Methods
-    var serialPortManager: ORSSerialPortManager = ORSSerialPortManager.shared()
-    @Published var serialPort: ORSSerialPort? {
-        didSet {
-            serialPort?.numberOfStopBits = 1
-            serialPort?.parity = .none
-            serialPort?.baudRate = 19200
-            serialPort?.shouldEchoReceivedData = true
+//start ethernet code
+//code hasn't been tested yet, might work with blue socket 
+class SyringePumpController {
+    var socket: Socket? = nil
+    let address = "192.168.1.100" // Replace with the actual IP address of the syringe pump
+    let port: Int32 = 12345 // Replace with the actual port of the syringe pump
+
+    init() {
+        connectToPump()
+    }
+
+    deinit {
+        socket?.close()
+    }
+
+    private func connectToPump() {
+        do {
+            socket = try Socket.create()
+            try socket?.connect(to: address, port: port)
+            print("Connected to the syringe pump")
+        } catch {
+            print("Failed to connect to the syringe pump: \(error)")
         }
     }
-    @Published var nextPortState = "Open"
-    
-    func openOrClosePort() {
-        if let port = self.serialPort {
-            if (port.isOpen) {
-                port.close()
-                nextPortState = "Open"
-            } else {
-                port.open()
-                nextPortState = "Close"
+
+    func send(_ sendString: String) {
+        print("Syringe pump controller sent: \(sendString)")
+        if let data = sendString.data(using: .utf8) {
+            do {
+                try socket?.write(from: data)
+            } catch {
+                print("Failed to send data: \(error)")
             }
         }
     }
+    //end ethernet 
     
-    func send(_ sendData :String) {
-
-        let sendString = sendData + "\r\n" // adding line end characters for syringe pump to work
-        print("Syringe pump controller sent:\(sendString)")
-        if let data = sendString.data(using: String.Encoding.utf8) {
-            self.serialPort?.send(data)
-        }
-    }
-    
-    // MARK: - Syringe Pump Controller Methods
+    // Syringe Pump Controller Methods
     @Published var nextPumpState: NextPumpState = .startPumping
     @Published var units: flowRateUnits = .nL_min
     @Published var flowRate: String = "20"
@@ -99,8 +102,4 @@ class SyringePumpController: ObservableObject {
     private func stopPumping() {
         send("STP")
     }
-}
-
-extension ORSSerialPort: Identifiable {
-    public var id: ORSSerialPort {return self}
 }
