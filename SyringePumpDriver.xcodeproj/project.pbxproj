@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA6657552BF826F7007FC5FB /* SyringePumpDriverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657542BF826F7007FC5FB /* SyringePumpDriverApp.swift */; };
+		AA6657572BF826F7007FC5FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657562BF826F7007FC5FB /* ContentView.swift */; };
+		AA6657592BF826F9007FC5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6657582BF826F9007FC5FB /* Assets.xcassets */; };
+		AA66575C2BF826F9007FC5FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA66575B2BF826F9007FC5FB /* Preview Assets.xcassets */; };
+		AA6657672BF826F9007FC5FB /* SyringePumpDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657662BF826F9007FC5FB /* SyringePumpDriverTests.swift */; };
+		AA6657712BF826F9007FC5FB /* SyringePumpDriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */; };
+		AA6657732BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA6657632BF826F9007FC5FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6657492BF826F7007FC5FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6657502BF826F7007FC5FB;
+			remoteInfo = SyringePumpDriver;
+		};
+		AA66576D2BF826F9007FC5FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6657492BF826F7007FC5FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6657502BF826F7007FC5FB;
+			remoteInfo = SyringePumpDriver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA6657512BF826F7007FC5FB /* SyringePumpDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyringePumpDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6657542BF826F7007FC5FB /* SyringePumpDriverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverApp.swift; sourceTree = "<group>"; };
+		AA6657562BF826F7007FC5FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA6657582BF826F9007FC5FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA66575B2BF826F9007FC5FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA66575D2BF826F9007FC5FB /* SyringePumpDriver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SyringePumpDriver.entitlements; sourceTree = "<group>"; };
+		AA6657622BF826F9007FC5FB /* SyringePumpDriverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyringePumpDriverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6657662BF826F9007FC5FB /* SyringePumpDriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverTests.swift; sourceTree = "<group>"; };
+		AA66576C2BF826F9007FC5FB /* SyringePumpDriverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyringePumpDriverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverUITests.swift; sourceTree = "<group>"; };
+		AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA66574E2BF826F7007FC5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA66575F2BF826F9007FC5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6657692BF826F9007FC5FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA6657482BF826F7007FC5FB = {
+			isa = PBXGroup;
+			children = (
+				AA6657532BF826F7007FC5FB /* SyringePumpDriver */,
+				AA6657652BF826F9007FC5FB /* SyringePumpDriverTests */,
+				AA66576F2BF826F9007FC5FB /* SyringePumpDriverUITests */,
+				AA6657522BF826F7007FC5FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA6657522BF826F7007FC5FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA6657512BF826F7007FC5FB /* SyringePumpDriver.app */,
+				AA6657622BF826F9007FC5FB /* SyringePumpDriverTests.xctest */,
+				AA66576C2BF826F9007FC5FB /* SyringePumpDriverUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6657532BF826F7007FC5FB /* SyringePumpDriver */ = {
+			isa = PBXGroup;
+			children = (
+				AA6657542BF826F7007FC5FB /* SyringePumpDriverApp.swift */,
+				AA6657562BF826F7007FC5FB /* ContentView.swift */,
+				AA6657582BF826F9007FC5FB /* Assets.xcassets */,
+				AA66575D2BF826F9007FC5FB /* SyringePumpDriver.entitlements */,
+				AA66575A2BF826F9007FC5FB /* Preview Content */,
+			);
+			path = SyringePumpDriver;
+			sourceTree = "<group>";
+		};
+		AA66575A2BF826F9007FC5FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA66575B2BF826F9007FC5FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AA6657652BF826F9007FC5FB /* SyringePumpDriverTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6657662BF826F9007FC5FB /* SyringePumpDriverTests.swift */,
+			);
+			path = SyringePumpDriverTests;
+			sourceTree = "<group>";
+		};
+		AA66576F2BF826F9007FC5FB /* SyringePumpDriverUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */,
+				AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */,
+			);
+			path = SyringePumpDriverUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA6657502BF826F7007FC5FB /* SyringePumpDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6657762BF826F9007FC5FB /* Build configuration list for PBXNativeTarget "SyringePumpDriver" */;
+			buildPhases = (
+				AA66574D2BF826F7007FC5FB /* Sources */,
+				AA66574E2BF826F7007FC5FB /* Frameworks */,
+				AA66574F2BF826F7007FC5FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SyringePumpDriver;
+			productName = SyringePumpDriver;
+			productReference = AA6657512BF826F7007FC5FB /* SyringePumpDriver.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA6657612BF826F9007FC5FB /* SyringePumpDriverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6657792BF826F9007FC5FB /* Build configuration list for PBXNativeTarget "SyringePumpDriverTests" */;
+			buildPhases = (
+				AA66575E2BF826F9007FC5FB /* Sources */,
+				AA66575F2BF826F9007FC5FB /* Frameworks */,
+				AA6657602BF826F9007FC5FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6657642BF826F9007FC5FB /* PBXTargetDependency */,
+			);
+			name = SyringePumpDriverTests;
+			productName = SyringePumpDriverTests;
+			productReference = AA6657622BF826F9007FC5FB /* SyringePumpDriverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA66576B2BF826F9007FC5FB /* SyringePumpDriverUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA66577C2BF826F9007FC5FB /* Build configuration list for PBXNativeTarget "SyringePumpDriverUITests" */;
+			buildPhases = (
+				AA6657682BF826F9007FC5FB /* Sources */,
+				AA6657692BF826F9007FC5FB /* Frameworks */,
+				AA66576A2BF826F9007FC5FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA66576E2BF826F9007FC5FB /* PBXTargetDependency */,
+			);
+			name = SyringePumpDriverUITests;
+			productName = SyringePumpDriverUITests;
+			productReference = AA66576C2BF826F9007FC5FB /* SyringePumpDriverUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA6657492BF826F7007FC5FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					AA6657502BF826F7007FC5FB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					AA6657612BF826F9007FC5FB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = AA6657502BF826F7007FC5FB;
+					};
+					AA66576B2BF826F9007FC5FB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = AA6657502BF826F7007FC5FB;
+					};
+				};
+			};
+			buildConfigurationList = AA66574C2BF826F7007FC5FB /* Build configuration list for PBXProject "SyringePumpDriver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA6657482BF826F7007FC5FB;
+			productRefGroup = AA6657522BF826F7007FC5FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA6657502BF826F7007FC5FB /* SyringePumpDriver */,
+				AA6657612BF826F9007FC5FB /* SyringePumpDriverTests */,
+				AA66576B2BF826F9007FC5FB /* SyringePumpDriverUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA66574F2BF826F7007FC5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA66575C2BF826F9007FC5FB /* Preview Assets.xcassets in Resources */,
+				AA6657592BF826F9007FC5FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6657602BF826F9007FC5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA66576A2BF826F9007FC5FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA66574D2BF826F7007FC5FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6657572BF826F7007FC5FB /* ContentView.swift in Sources */,
+				AA6657552BF826F7007FC5FB /* SyringePumpDriverApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA66575E2BF826F9007FC5FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6657672BF826F9007FC5FB /* SyringePumpDriverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6657682BF826F9007FC5FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6657732BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift in Sources */,
+				AA6657712BF826F9007FC5FB /* SyringePumpDriverUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA6657642BF826F9007FC5FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6657502BF826F7007FC5FB /* SyringePumpDriver */;
+			targetProxy = AA6657632BF826F9007FC5FB /* PBXContainerItemProxy */;
+		};
+		AA66576E2BF826F9007FC5FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6657502BF826F7007FC5FB /* SyringePumpDriver */;
+			targetProxy = AA66576D2BF826F9007FC5FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA6657742BF826F9007FC5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA6657752BF826F9007FC5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AA6657772BF826F9007FC5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SyringePumpDriver/SyringePumpDriver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SyringePumpDriver/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HildrethResearchGroup.SyringePumpDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA6657782BF826F9007FC5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SyringePumpDriver/SyringePumpDriver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SyringePumpDriver/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HildrethResearchGroup.SyringePumpDriver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AA66577A2BF826F9007FC5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HildrethResearchGroup.SyringePumpDriverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SyringePumpDriver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SyringePumpDriver";
+			};
+			name = Debug;
+		};
+		AA66577B2BF826F9007FC5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HildrethResearchGroup.SyringePumpDriverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SyringePumpDriver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SyringePumpDriver";
+			};
+			name = Release;
+		};
+		AA66577D2BF826F9007FC5FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HildrethResearchGroup.SyringePumpDriverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SyringePumpDriver;
+			};
+			name = Debug;
+		};
+		AA66577E2BF826F9007FC5FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HildrethResearchGroup.SyringePumpDriverUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SyringePumpDriver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA66574C2BF826F7007FC5FB /* Build configuration list for PBXProject "SyringePumpDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6657742BF826F9007FC5FB /* Debug */,
+				AA6657752BF826F9007FC5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6657762BF826F9007FC5FB /* Build configuration list for PBXNativeTarget "SyringePumpDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6657772BF826F9007FC5FB /* Debug */,
+				AA6657782BF826F9007FC5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6657792BF826F9007FC5FB /* Build configuration list for PBXNativeTarget "SyringePumpDriverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA66577A2BF826F9007FC5FB /* Debug */,
+				AA66577B2BF826F9007FC5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA66577C2BF826F9007FC5FB /* Build configuration list for PBXNativeTarget "SyringePumpDriverUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA66577D2BF826F9007FC5FB /* Debug */,
+				AA66577E2BF826F9007FC5FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA6657492BF826F7007FC5FB /* Project object */;
+}
