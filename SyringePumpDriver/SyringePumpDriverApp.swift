@@ -1,17 +1,29 @@
 //
-//  SyringePumpDriverApp.swift
-//  SyringePumpDriver
+//  ElectrospinnerApp.swift
+//  Electrospinner
 //
-//  Created by Steve on 5/17/24.
+//  Created by Steven DiGregorio on 4/1/22.
 //
 
 import SwiftUI
 
 @main
 struct SyringePumpDriverApp: App {
+    @ObservedObject var syringePump = SyringePump()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(electrospinner: electrospinner)
         }
+#if os(macOS)
+        Settings {
+            PreferencesView(electrospinner: electrospinner)
+                .frame(width: 400, height: 400, alignment: .top)
+        }
+#endif
     }
 }
+
+// Notes
+//Import ORSSerial Package: https://github.com/armadsen/ORSSerialPort.git
+//Disable app sandbox

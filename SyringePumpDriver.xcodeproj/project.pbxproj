@@ -14,6 +14,9 @@
 		AA6657672BF826F9007FC5FB /* SyringePumpDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657662BF826F9007FC5FB /* SyringePumpDriverTests.swift */; };
 		AA6657712BF826F9007FC5FB /* SyringePumpDriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */; };
 		AA6657732BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */; };
+		AA764CA12BFAAA3D004F3B90 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA764CA02BFAAA3D004F3B90 /* SyringePumpController.swift */; };
+		AA764CA42BFAB09A004F3B90 /* BlueSocketTestCommonLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = AA764CA32BFAB09A004F3B90 /* BlueSocketTestCommonLibrary */; };
+		AA764CA62BFAB09A004F3B90 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = AA764CA52BFAB09A004F3B90 /* Socket */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 		AA66576C2BF826F9007FC5FB /* SyringePumpDriverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyringePumpDriverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverUITests.swift; sourceTree = "<group>"; };
 		AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AA764CA02BFAAA3D004F3B90 /* SyringePumpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA764CA42BFAB09A004F3B90 /* BlueSocketTestCommonLibrary in Frameworks */,
+				AA764CA62BFAB09A004F3B90 /* Socket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,7 @@
 		AA6657482BF826F7007FC5FB = {
 			isa = PBXGroup;
 			children = (
+				AA764C9F2BFAA9CA004F3B90 /* FunctionControl */,
 				AA6657532BF826F7007FC5FB /* SyringePumpDriver */,
 				AA6657652BF826F9007FC5FB /* SyringePumpDriverTests */,
 				AA66576F2BF826F9007FC5FB /* SyringePumpDriverUITests */,
@@ -129,6 +136,14 @@
 			path = SyringePumpDriverUITests;
 			sourceTree = "<group>";
 		};
+		AA764C9F2BFAA9CA004F3B90 /* FunctionControl */ = {
+			isa = PBXGroup;
+			children = (
+				AA764CA02BFAAA3D004F3B90 /* SyringePumpController.swift */,
+			);
+			path = FunctionControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +160,10 @@
 			dependencies = (
 			);
 			name = SyringePumpDriver;
+			packageProductDependencies = (
+				AA764CA32BFAB09A004F3B90 /* BlueSocketTestCommonLibrary */,
+				AA764CA52BFAB09A004F3B90 /* Socket */,
+			);
 			productName = SyringePumpDriver;
 			productReference = AA6657512BF826F7007FC5FB /* SyringePumpDriver.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +236,9 @@
 				Base,
 			);
 			mainGroup = AA6657482BF826F7007FC5FB;
+			packageReferences = (
+				AA764CA22BFAB09A004F3B90 /* XCRemoteSwiftPackageReference "BlueSocket" */,
+			);
 			productRefGroup = AA6657522BF826F7007FC5FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6657572BF826F7007FC5FB /* ContentView.swift in Sources */,
+				AA764CA12BFAAA3D004F3B90 /* SyringePumpController.swift in Sources */,
 				AA6657552BF826F7007FC5FB /* SyringePumpDriverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +596,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA764CA22BFAB09A004F3B90 /* XCRemoteSwiftPackageReference "BlueSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/BlueSocket.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA764CA32BFAB09A004F3B90 /* BlueSocketTestCommonLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA764CA22BFAB09A004F3B90 /* XCRemoteSwiftPackageReference "BlueSocket" */;
+			productName = BlueSocketTestCommonLibrary;
+		};
+		AA764CA52BFAB09A004F3B90 /* Socket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA764CA22BFAB09A004F3B90 /* XCRemoteSwiftPackageReference "BlueSocket" */;
+			productName = Socket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA6657492BF826F7007FC5FB /* Project object */;
 }
