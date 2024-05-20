@@ -14,9 +14,11 @@
 		AA6657672BF826F9007FC5FB /* SyringePumpDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657662BF826F9007FC5FB /* SyringePumpDriverTests.swift */; };
 		AA6657712BF826F9007FC5FB /* SyringePumpDriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */; };
 		AA6657732BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */; };
-		AA764CA12BFAAA3D004F3B90 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA764CA02BFAAA3D004F3B90 /* SyringePumpController.swift */; };
 		AA764CA42BFAB09A004F3B90 /* BlueSocketTestCommonLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = AA764CA32BFAB09A004F3B90 /* BlueSocketTestCommonLibrary */; };
 		AA764CA62BFAB09A004F3B90 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = AA764CA52BFAB09A004F3B90 /* Socket */; };
+		AA764CAB2BFBA207004F3B90 /* SyringePumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA764CA72BFBA207004F3B90 /* SyringePumpView.swift */; };
+		AA764CAC2BFBA207004F3B90 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA764CA92BFBA207004F3B90 /* SyringePumpController.swift */; };
+		AAC8E3FA2BFBBC96006D5A66 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8E3F92BFBBC96006D5A66 /* PreferencesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,9 @@
 		AA66576C2BF826F9007FC5FB /* SyringePumpDriverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyringePumpDriverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6657702BF826F9007FC5FB /* SyringePumpDriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverUITests.swift; sourceTree = "<group>"; };
 		AA6657722BF826F9007FC5FB /* SyringePumpDriverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpDriverUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AA764CA02BFAAA3D004F3B90 /* SyringePumpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
+		AA764CA72BFBA207004F3B90 /* SyringePumpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyringePumpView.swift; sourceTree = "<group>"; };
+		AA764CA92BFBA207004F3B90 /* SyringePumpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
+		AAC8E3F92BFBBC96006D5A66 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,8 @@
 		AA6657482BF826F7007FC5FB = {
 			isa = PBXGroup;
 			children = (
-				AA764C9F2BFAA9CA004F3B90 /* FunctionControl */,
+				AA764CAA2BFBA207004F3B90 /* SyringePumpController */,
+				AA764CA82BFBA207004F3B90 /* SyringePumpView */,
 				AA6657532BF826F7007FC5FB /* SyringePumpDriver */,
 				AA6657652BF826F9007FC5FB /* SyringePumpDriverTests */,
 				AA66576F2BF826F9007FC5FB /* SyringePumpDriverUITests */,
@@ -136,12 +141,21 @@
 			path = SyringePumpDriverUITests;
 			sourceTree = "<group>";
 		};
-		AA764C9F2BFAA9CA004F3B90 /* FunctionControl */ = {
+		AA764CA82BFBA207004F3B90 /* SyringePumpView */ = {
 			isa = PBXGroup;
 			children = (
-				AA764CA02BFAAA3D004F3B90 /* SyringePumpController.swift */,
+				AA764CA72BFBA207004F3B90 /* SyringePumpView.swift */,
+				AAC8E3F92BFBBC96006D5A66 /* PreferencesView.swift */,
 			);
-			path = FunctionControl;
+			path = SyringePumpView;
+			sourceTree = "<group>";
+		};
+		AA764CAA2BFBA207004F3B90 /* SyringePumpController */ = {
+			isa = PBXGroup;
+			children = (
+				AA764CA92BFBA207004F3B90 /* SyringePumpController.swift */,
+			);
+			path = SyringePumpController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC8E3FA2BFBBC96006D5A66 /* PreferencesView.swift in Sources */,
 				AA6657572BF826F7007FC5FB /* ContentView.swift in Sources */,
-				AA764CA12BFAAA3D004F3B90 /* SyringePumpController.swift in Sources */,
+				AA764CAB2BFBA207004F3B90 /* SyringePumpView.swift in Sources */,
 				AA6657552BF826F7007FC5FB /* SyringePumpDriverApp.swift in Sources */,
+				AA764CAC2BFBA207004F3B90 /* SyringePumpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

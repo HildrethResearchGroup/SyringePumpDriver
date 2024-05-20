@@ -9,15 +9,15 @@ import SwiftUI
 
 @main
 struct SyringePumpDriverApp: App {
-    @ObservedObject var syringePump = SyringePump()
-    
+    @StateObject private var controller = SyringePumpController() // Create a shared instance of the controller
+
     var body: some Scene {
         WindowGroup {
-            ContentView(electrospinner: electrospinner)
+            SyringePumpView(controller: controller)
         }
 #if os(macOS)
         Settings {
-            PreferencesView(electrospinner: electrospinner)
+            PreferencesView(controller: controller)
                 .frame(width: 400, height: 400, alignment: .top)
         }
 #endif
