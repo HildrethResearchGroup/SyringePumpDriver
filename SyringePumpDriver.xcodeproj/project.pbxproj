@@ -19,6 +19,7 @@
 		AA764CAB2BFBA207004F3B90 /* SyringePumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA764CA72BFBA207004F3B90 /* SyringePumpView.swift */; };
 		AA764CAC2BFBA207004F3B90 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA764CA92BFBA207004F3B90 /* SyringePumpController.swift */; };
 		AAC8E3FA2BFBBC96006D5A66 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8E3F92BFBBC96006D5A66 /* PreferencesView.swift */; };
+		AAC8E3FC2BFBC7A5006D5A66 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAC8E3FB2BFBC7A5006D5A66 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		AA764CA72BFBA207004F3B90 /* SyringePumpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyringePumpView.swift; sourceTree = "<group>"; };
 		AA764CA92BFBA207004F3B90 /* SyringePumpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
 		AAC8E3F92BFBBC96006D5A66 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		AAC8E3FB2BFBC7A5006D5A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				AA6657582BF826F9007FC5FB /* Assets.xcassets */,
 				AA66575D2BF826F9007FC5FB /* SyringePumpDriver.entitlements */,
 				AA66575A2BF826F9007FC5FB /* Preview Content */,
+				AAC8E3FB2BFBC7A5006D5A66 /* Info.plist */,
 			);
 			path = SyringePumpDriver;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				AA66575C2BF826F9007FC5FB /* Preview Assets.xcassets in Resources */,
 				AA6657592BF826F9007FC5FB /* Assets.xcassets in Resources */,
+				AAC8E3FC2BFBC7A5006D5A66 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
