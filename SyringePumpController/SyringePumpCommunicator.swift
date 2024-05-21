@@ -3,11 +3,6 @@ import Socket //import bluesocket library
 
 final class SyringePumpCommunicator: ObservableObject {
     
-    @Published var nextPortState: String = "Connect"
-    @Published var nextPumpState: NextPumpState = .startPumping
-    @Published var units: flowRateUnits = .nL_min
-    @Published var flowRate: String = "20"
-    
     let socket: Socket
     
     /// Tries to create an instance from the specified address, and port of the instrument. A timeout value must also be specified.
@@ -52,27 +47,6 @@ final class SyringePumpCommunicator: ObservableObject {
         deinit {
             // Close the connection to the socket because we will no longer need it.
             socket.close()
-        }
-    enum flowRateUnits: String, CaseIterable, Identifiable {
-            var id: Self { self }
-
-            case mm_hr = "ml / hr"
-            case uL_hr = "µl / hr"
-            case nL_hr = "nl / hr"
-            case mm_min = "ml / min"
-            case uL_min = "µl / min"
-            case nL_min = "nl / min"
-
-            var queryString: String {
-                switch self {
-                case .mm_hr: return "MH"
-                case .uL_hr: return "UH"
-                case .nL_hr: return "NH"
-                case .mm_min: return "MM"
-                case .uL_min: return "UM"
-                case .nL_min: return "NM"
-                }
-            }
         }
     }
 
