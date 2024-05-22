@@ -1,7 +1,7 @@
 import Foundation
 import Socket //import bluesocket library
 
-final class SyringePumpCommunicator: ObservableObject {
+final class SyringePumpCommunicator {
     
     let socket: Socket
     
