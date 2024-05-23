@@ -27,6 +27,8 @@ final class SyringePumpCommunicator {
             socket.readBufferSize = 400
             
             do {
+                print(address)
+                print(port)
                 try socket.connect(to: address, port: Int32(port))
             } catch { throw Error.couldNotConnect }
             

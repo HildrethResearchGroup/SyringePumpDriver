@@ -30,6 +30,8 @@ struct SyringePumpView: View {
                 Button(action: { controller.startOrStopPumping() }) {
                     Text(controller.nextPumpState.rawValue) // Display the current pump state
                 }
+                
+                Button("RUN", action: controller.runPump)
             }
         }
     }
