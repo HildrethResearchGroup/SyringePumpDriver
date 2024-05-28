@@ -24,7 +24,7 @@ final class SyringePumpCommunicator {
             } catch { throw Error.couldNotCreateSocket }
             
             // USr-TCP232-302 sends packets in sizes of 400 bytes
-            socket.readBufferSize = 400
+            socket.readBufferSize = 1024
             
             do {
                 print(address)
@@ -98,12 +98,15 @@ extension SyringePumpCommunicator {
 extension SyringePumpCommunicator {
     /// Sends a string to the instrument. This should be a function such as `"ElapsedTimeGet(double *)"`.
     /// - Parameter string: The string to sent the instrument.
-    func write(string: String) throws {
-        do {
-            try socket.write(from: string)
-        } catch {
-            throw Error.failedWriteOperation
-        }
+    func write(data: Data) throws {
+
+            do{
+                try socket.write(from: data)
+                
+            } catch {
+                throw Error.failedWriteOperation
+            }
+   
     }
 }
 

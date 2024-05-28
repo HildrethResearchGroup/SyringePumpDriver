@@ -25,13 +25,20 @@ struct SyringePumpView: View {
                         Text(unit.rawValue).tag(unit)
                     }
                 }
+                
+                Picker("Pump", selection: $controller.pumpNum) {
+                    ForEach(SyringePumpController.pumpNumber.allCases) { unit in
+                        Text(unit.rawValue).tag(unit)
+                    }
+                }
+                
 
                 // Start Button
                 Button(action: { controller.startOrStopPumping() }) {
                     Text(controller.nextPumpState.rawValue) // Display the current pump state
                 }
                 
-                Button("RUN", action: controller.runPump)
+                //Button("RUN", action: controller.runPump)
             }
         }
     }

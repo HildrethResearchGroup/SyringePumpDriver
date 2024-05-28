@@ -7,7 +7,10 @@ public class SyringePumpController: ObservableObject {
     @Published var nextPortState: String = "Connect"
     @Published var nextPumpState: NextPumpState = .startPumping
     @Published var units: flowRateUnits = .nL_min
+    @Published var pumpNum: pumpNumber = .p0
+
     @Published var flowRate: String = "20"
+    
     
     //var socket: Socket? = nil
     let address = "192.168.0.7" // Replace with the actual IP address of the syringe pump
@@ -30,8 +33,13 @@ public class SyringePumpController: ObservableObject {
             communicator = try SyringePumpCommunicator(address: address, port: Int(port), timeout: timeout)
             //socket = try Socket.create()
             //try socket?.connect(to: address, port: port)
+            isConnected = true
+            nextPortState = "Disconnect"
+            
+            
             print("Connected to the syringe pump")
         } catch {
+            isConnected = false
             print("Failed to connect to the syringe pump: \(error)")
         }
     }
@@ -47,7 +55,7 @@ public class SyringePumpController: ObservableObject {
         print("Syringe pump controller sent: \(sendString)")
         if let data = sendString.data(using: .utf8) {
             do {
-                try communicator.write(string: sendString)
+                try communicator.write(data: data)
             } catch {
                 print("Failed to send data: \(error)")
             }
@@ -55,6 +63,22 @@ public class SyringePumpController: ObservableObject {
     }
     
     
+    
+    enum pumpNumber: String, CaseIterable, Identifiable {
+        var id: Self { self }
+
+        case p0 = "Pump 1"
+        case p1 = "Pump 2"
+
+
+        var queryString: String {
+            switch self {
+            case .p0: return "00"
+            case .p1: return "01"
+
+            }
+        }
+    }
     
     
     enum flowRateUnits: String, CaseIterable, Identifiable {
@@ -94,7 +118,7 @@ public class SyringePumpController: ObservableObject {
             nextPumpState = .startPumping
         }
     }
-    
+    /*
     
     func runPump() {
         guard let communicator else {
@@ -110,15 +134,15 @@ public class SyringePumpController: ObservableObject {
             print("Communictor could not write")
         }
         
-    }
+    }*/
     
     
 /*
     private func startPumping() {
         do {
-            let message1 = "FUN RAT"
-            let message2 = "RAT \(self.flowRate) \(self.units.queryString)"
-            let message3 = "RUN"
+            let message1 = "FUN RAT\r\n"
+            let message2 = "RAT \(self.flowRate) \(self.units.queryString)\r\n"
+            let message3 = "RUN\r\n"
 
             try communicator?.write(string: message1)
             print("Message Sent: \(message1)")
@@ -139,18 +163,21 @@ public class SyringePumpController: ObservableObject {
         self.send("") // Sending empty string first seems to make things more consistent
         // Adding delays for serial communication to work
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.send("FUN RAT") // entering rate mode
+            self.send("\(self.pumpNum.queryString)FUN RAT") // entering rate mode
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.send("RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
+            self.send("\(self.pumpNum.queryString)RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.send("RUN") // starting pump
+            self.send("\(self.pumpNum.queryString)RUN") // starting pump
         }
     }
     
     private func stopPumping() {
-        send("STP")
+        send("\(self.pumpNum.queryString)STP")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        self.send("\(self.pumpNum.queryString)STP") // entering rate mode
+    }
     }
     
     func connectOrDisconnect() {
