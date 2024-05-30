@@ -33,17 +33,13 @@ public class SyringePumpController: ObservableObject {
     deinit {
         communicator?.socket.close()
         communicator = nil
-        }
+    }
     
     private func connectToPump() {
         do {
             communicator = try SyringePumpCommunicator(address: address, port: Int(port), timeout: timeout)
-            //socket = try Socket.create()
-            //try socket?.connect(to: address, port: port)
             isConnected = true
             nextPortState = "Disconnect"
-            
-            
             print("Connected to the syringe pump")
         } catch {
             isConnected = false
@@ -69,24 +65,19 @@ public class SyringePumpController: ObservableObject {
         }
     }
     
-    
-    
     enum pumpNumber: String, CaseIterable, Identifiable {
         var id: Self { self }
 
         case p0 = "Pump 1"
         case p1 = "Pump 2"
 
-
         var queryString: String {
             switch self {
             case .p0: return "00"
             case .p1: return "01"
-
             }
         }
     }
-    
     
     enum flowRateUnits: String, CaseIterable, Identifiable {
         var id: Self { self }
