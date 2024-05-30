@@ -5,11 +5,18 @@ public class SyringePumpController: ObservableObject {
     var communicator: SyringePumpCommunicator?
     
     @Published var nextPortState: String = "Connect"
-    @Published var nextPumpState: NextPumpState = .startPumping
+    var nextPumpState: NextPumpState = .startPumping1
+    var nextPumpState2: NextPumpState2 = .startPumping2
+
     @Published var units: flowRateUnits = .nL_min
+    @Published var units2: flowRateUnits2 = .nL_min
+
     @Published var pumpNum: pumpNumber = .p0
 
     @Published var flowRate: String = "20"
+    @Published var flowRate2: String = "20"
+
+    @Published var pump: String = "00"
     
     
     //var socket: Socket? = nil
@@ -102,81 +109,101 @@ public class SyringePumpController: ObservableObject {
             }
         }
     }
+    enum flowRateUnits2: String, CaseIterable, Identifiable {
+        var id: Self { self }
 
+        case mm_hr = "ml / hr"
+        case uL_hr = "µl / hr"
+        case nL_hr = "nl / hr"
+        case mm_min = "ml / min"
+        case uL_min = "µl / min"
+        case nL_min = "nl / min"
+
+        var queryString2: String {
+            switch self {
+            case .mm_hr: return "MH"
+            case .uL_hr: return "UH"
+            case .nL_hr: return "NH"
+            case .mm_min: return "MM"
+            case .uL_min: return "UM"
+            case .nL_min: return "NM"
+            }
+        }
+    }
+/*
     enum NextPumpState: String {
         case startPumping = "Start Pumping"
         case stopPumping = "Stop Pumping"
+    }*/
+    enum NextPumpState: String {
+        case startPumping1 = "Start Pumping 1"
+        case stopPumping1 = "Stop Pumping 1"
+    }
+    
+    
+    enum NextPumpState2: String {
+        case startPumping2 = "Start Pumping 2"
+        case stopPumping2 = "Stop Pumping 2"
     }
 
-    func startOrStopPumping() {
+    func startOrStopPumping1(pump: String) {
         switch nextPumpState {
-        case .startPumping:
-            startPumping()
-            nextPumpState = .stopPumping
-        case .stopPumping:
-            stopPumping()
-            nextPumpState = .startPumping
-        }
-    }
-    /*
-    
-    func runPump() {
-        guard let communicator else {
-            print("No Communicator")
-            return
-        }
-        
-        do {
-            try communicator.write(string: "RUN \r\n")
-            print("Trying to RUN")
-
-        } catch {
-            print("Communictor could not write")
-        }
-        
-    }*/
-    
-    
-/*
-    private func startPumping() {
-        do {
-            let message1 = "FUN RAT\r\n"
-            let message2 = "RAT \(self.flowRate) \(self.units.queryString)\r\n"
-            let message3 = "RUN\r\n"
-
-            try communicator?.write(string: message1)
-            print("Message Sent: \(message1)")
-            try communicator?.write(string: message2)
-            print("Message Sent: \(message2)")
-            try communicator?.write(string: message3)
-            print("Message Sent: \(message3)")
-
-        } catch {
-            print("Socket error: \(error)")
-        }
-    }*/
-
-    
-
-    private func startPumping() {
-    
-        self.send("") // Sending empty string first seems to make things more consistent
-        // Adding delays for serial communication to work
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.send("\(self.pumpNum.queryString)FUN RAT") // entering rate mode
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.send("\(self.pumpNum.queryString)RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.send("\(self.pumpNum.queryString)RUN") // starting pump
+        case .startPumping1:
+            startPumping(pump: pump)
+            nextPumpState = .stopPumping1
+        case .stopPumping1:
+            stopPumping(pump: pump)
+            nextPumpState = .startPumping1
         }
     }
     
-    private func stopPumping() {
-        send("\(self.pumpNum.queryString)STP")
+    func startOrStopPumping2(pump: String) {
+        switch nextPumpState2 {
+        case .startPumping2:
+            startPumping(pump: pump)
+            nextPumpState2 = .stopPumping2
+        case .stopPumping2:
+            stopPumping(pump: pump)
+            nextPumpState2 = .startPumping2
+        }
+    }
+
+
+    private func startPumping(pump: String) {
+        switch (pump){
+        case "00":
+            self.send("") // Sending empty string first seems to make things more consistent
+            // Adding delays for serial communication to work
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.send("\(pump)FUN RAT") // entering rate mode
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.send("\(pump)RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.send("\(pump)RUN") // starting pump
+            }
+        case "01":
+            self.send("") // Sending empty string first seems to make things more consistent
+            // Adding delays for serial communication to work
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.send("\(pump)FUN RAT") // entering rate mode
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.send("\(pump)RAT \(self.flowRate2) \(self.units2.queryString2)") // Setting new flow rate
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.send("\(pump)RUN") // starting pump
+            }
+        default:
+            break
+        }
+    }
+    
+    private func stopPumping(pump: String) {
+        send("\(pump)STP")
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-        self.send("\(self.pumpNum.queryString)STP") // entering rate mode
+        self.send("\(pump)STP") // entering rate mode
     }
     }
     
