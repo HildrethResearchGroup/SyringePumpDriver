@@ -1,7 +1,7 @@
 import Foundation
 import Socket //import bluesocket library
 
-final class SyringePumpCommunicator {
+final class ManualSyringePumpCommunicator {
     
     let socket: Socket
     
@@ -52,7 +52,7 @@ final class SyringePumpCommunicator {
         }
     }
 
-extension SyringePumpCommunicator {
+extension ManualSyringePumpCommunicator {
     /// Reads a message from the instrument.
     ///
     /// - Throws: If a reading or decoding error occurred.
@@ -95,7 +95,7 @@ extension SyringePumpCommunicator {
 
 // MARK: Writing
 
-extension SyringePumpCommunicator {
+extension ManualSyringePumpCommunicator {
     /// Sends a string to the instrument. This should be a function such as `"ElapsedTimeGet(double *)"`.
     /// - Parameter string: The string to sent the instrument.
     func write(data: Data) throws {
@@ -113,7 +113,7 @@ extension SyringePumpCommunicator {
 // MARK: Error
 
 //update these errors so they correspond with the errors from the pump
-extension SyringePumpCommunicator {
+extension ManualSyringePumpCommunicator {
     /// An error associated with an XPSQ8Communicator.
     ///
     /// - `couldNotCreateSocket`: The socket to communicate with the instrument could not be created.
@@ -132,7 +132,7 @@ extension SyringePumpCommunicator {
 }
 
 // MARK: Error Descriptions
-extension SyringePumpCommunicator.Error {
+extension ManualSyringePumpCommunicator.Error {
     var localizedDescription: String {
         switch self {
         case .couldNotConnect:
